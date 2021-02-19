@@ -3,7 +3,7 @@ Configuration of an php-project by class.
 1. install
 
 If you use composer, add this line to require block of composer.json .
-"kmucms/config": "1.0.*"
+"kmucms/config": "@dev"
 
 
 2. init configuration class. Preffered on the same spot where you import composer's autoload.
