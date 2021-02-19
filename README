@@ -1,13 +1,18 @@
 Configuration of an php-project by class.
 
+1. install
 
-1. init configuration class. Preffered on the same spot where you import composer's autoload.
+If you use composer, add this line to require block of composer.json .
+"kmucms/config": "1.0.*"
+
+
+2. init configuration class. Preffered on the same spot where you import composer's autoload.
 
 require_once __DIR__ . '/vendor/autoload.php';
 \kmucms\config\Config::init(__DIR__ . '/_config.php');
 
 
-2. create the configuration file on given position (in example above: __DIR__ . '/_config.php'). 
+3. create the configuration file on given position (in example above: __DIR__ . '/_config.php'). 
 
 <?php
 
@@ -24,7 +29,7 @@ return [
 ];
 
 
-3. use it
+4. use it
 
 <?php
 
