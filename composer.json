@@ -1,7 +1,6 @@
 {
     "name": "kmucms/config",
     "description": "Project configuration based on class names.",
-    "version": "1.0.0-dev",
     "type": "library",
     "license": "MIT",
     "require": {
