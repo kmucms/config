@@ -23,11 +23,24 @@ class Config{
   }
 
   public function getConf(string $name){
-    return self::$data[$this->type][$this->className][$name];
+    if(isset(self::$data[$this->type][$this->className][$name])){
+      return self::$data[$this->type][$this->className][$name];
+    }
+    return null;
+  }
+
+  public function getConfAll(){
+    if(isset(self::$data[$this->type][$this->className])){
+      return self::$data[$this->type][$this->className];
+    }
+    return null;
   }
 
   public function getGlobal(string $name){
-    return self::$data['global'][$name];
+    if(isset(self::$data['global'][$name])){
+      return self::$data['global'][$name];
+    }
+    return null;
   }
 
 }
