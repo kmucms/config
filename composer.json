@@ -1,0 +1,15 @@
+{
+    "name": "kmucms/config",
+    "description": "Project configuration based on class names.",
+	"version": "1.0.0",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "kmucms": "src"
+        }
+    }
+}
