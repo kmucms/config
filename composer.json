@@ -1,6 +1,6 @@
 {
     "name": "kmucms/config",
-    "description": "Project configuration based on class names.",
+    "description": "Project configuration. Configuration variables are gouped by class-names. Every class uses their own configuration vars.",
     "type": "library",
     "license": "MIT",
     "require": {
