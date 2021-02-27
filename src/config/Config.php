@@ -20,6 +20,7 @@ class Config{
    * @var string
    */
   private $ressourceId = '';
+  
   /**
    * the type of an configurable-ressource e.g. class, php-file, db-table ...
    * @var string
@@ -68,7 +69,7 @@ class Config{
     return null;
   }
 
-  public function getGlobal(string $name){
+  public function getGlobal(string $name): mixed{
     if(isset(self::$data['global'][$name])){
       return self::$data['global'][$name];
     }
