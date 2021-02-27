@@ -30,6 +30,7 @@ If you use composer, add this line to require block of composer.json .
   
 └────────────────────────────────────────────────────────────────────────┘
 
+
 3. Create the configuration file on given position (in example above: __DIR__ . '/_config.php').
 
 ┌─ _config.php ──────────────────────────────────────────────────────────┐
