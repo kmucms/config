@@ -1,47 +1,73 @@
-Configuration of an php-project by class.
+Configure a php project. 
+Every php-class gets their own configuration variables. 
+Configuration syntax is an nested php-array.
+
 
 1. install
 
 If you use composer, add this line to require block of composer.json .
-"kmucms/config": "@dev"
 
-
-2. init configuration class. Preffered on the same spot where you import composer's autoload.
-
-require_once __DIR__ . '/vendor/autoload.php';
-\kmucms\config\Config::init(__DIR__ . '/_config.php');
-
-
-3. create the configuration file on given position (in example above: __DIR__ . '/_config.php'). 
-
-<?php
-
-return [
-  'global' => [
-  ],
-  'class'  => [
-    \my\namespace\my\ClassName::class => [
-      'value1' => 'v1',
-      'value2' => 'v2',
-      'name_n' => 'nxyz',
-    ],
-  ],
-];
-
-
-4. use it
-
-<?php
-
-namespace my\namespace\my;
-
-class ClassName{
-
-  public function myFunction(){
-    $conf = \kmucms\config\Config::getInstanceByClass(self::class);
-    $a = $conf->getConf('value1'); // = 'v1'
-    // ...
+┌─ composer.json ────────────────────────────────────────────────────────┐
+  
+  {
+    ...
+    "require": {
+      ...
+      "kmucms/config": "@dev"
+    }
   }
 
-}
+└────────────────────────────────────────────────────────────────────────┘
+
+
+2. Init configuration class. Preffered on the same spot where you import composer's autoload.
+
+┌─ index.php ────────────────────────────────────────────────────────────┐
+
+  require_once __DIR__ . '/vendor/autoload.php';
+  
+  \kmucms\config\Config::init(__DIR__ . '/_config.php');
+  
+└────────────────────────────────────────────────────────────────────────┘
+
+
+3. Create the configuration file on given position (in example above: __DIR__ . '/_config.php').
+
+┌─ _config.php ──────────────────────────────────────────────────────────┐
+
+  <?php
+  
+  return [
+    'global' => [
+    ],
+    'class'  => [
+      \my\namespace\my\ClassName::class => [
+        'value1' => 'v1',
+        'value2' => 'v2',
+        'name_n' => 'nxyz',
+      ],
+    ],
+  ];
+
+└────────────────────────────────────────────────────────────────────────┘
+
+
+4. use it in classes
+
+┌─ ClassName.php ────────────────────────────────────────────────────────┐
+
+  <?php
+
+  namespace my\namespace\my;
+
+  class ClassName{
+
+    public function myFunction(){
+      $conf = \kmucms\config\Config::getInstanceByClass(self::class);
+      $a = $conf->getConf('value1'); // = 'v1'
+      // ...
+    }
+
+└────────────────────────────────────────────────────────────────────────┘
+
 
