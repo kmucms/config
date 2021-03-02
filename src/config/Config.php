@@ -41,7 +41,7 @@ class Config{
     $this->type      = $ressourceType;
   }
 
-  public static function getInstanceClass(string $className): self{
+  public static function getInstanceByClass(string $className): self{
     return new self($className, 'class');
   }
 
